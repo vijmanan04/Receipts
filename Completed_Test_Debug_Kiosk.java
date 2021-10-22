@@ -23,8 +23,8 @@ public class Kiosk{
     System.out.println("");
 
     System.out.println("Great! Here is your recipt.");
-    Printer printer = new Printer(totalPrice, qty, items, prices); // load class
-    // call apropriate functions
+    Printer printer = new Printer(totalPrice, qty, items, prices); // load class; (i.e. send to job to printer)
+    // call apropriate functions 
     printer.printHeader();
     printer.printOrder();
     printer.printTotals();
