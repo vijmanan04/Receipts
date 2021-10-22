@@ -30,4 +30,4 @@ public class Kiosk{
     printer.printTotals();
     printer.printHeader();
   } // close main
-} // close class
+} // close main class
