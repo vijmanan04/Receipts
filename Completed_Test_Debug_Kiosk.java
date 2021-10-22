@@ -1,5 +1,5 @@
 /*
-******** Took 5 min and 1 second to type this class
+********Took 5 min and 1 second to type this class
 
 Description of my process to make this program:
 The process I used to make the changes from the quiz version to the current version is as follows. 
