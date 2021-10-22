@@ -10,7 +10,8 @@ of the descriptor words, meaning 'total', 'subtotal', and 'tax', which was 8 due
 smaller sized words equal in string length to subtotal by adding spaces in the string to get to 8 total characters. Now since all the descriptors have the same 
 length, I just needed to program a constant number of spaces. Lastly, since the prices could be 4 or 5 charactes long (including decimal point), I used condtionals
 to format the numbers so that an extra space was made in front of the prices with 4 characters, to make them 5. In general, my process invovled a lot of checking
-the alignment of the printer and finding ways to break down the complexity into smaller parts that allowed me to slowly tackle the problem.
+the alignment of the printer and finding ways to break down the complexity into smaller parts that allowed me to slowly tackle the problem. I struggled with getting
+all of the items to align within 40 characters, but the way I figured this out was by calculating the out the spacesby hand and double checking in code.
 */
 public class Printer { //prints recipt
   
