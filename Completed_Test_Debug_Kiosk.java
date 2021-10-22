@@ -16,7 +16,7 @@ public class Kiosk{
   public static void main(String args[]){
     String[] items = {"apple", "banana", "pear", "strawberry", "mango"};
     System.out.println("Welcome to Kroger! You will purchase then buy your items");
-    double[] prices = {2.33, 2.89, 8.12, 9.15,10.34};
+    double[] prices = {2.33, 2.89, 8.12, 9.15,7.34};
     System.out.println("Please purchase your good. You will be prompted to buy a type of food, along with its price. You will need to enter the quantity you want to buy.");
     String buffer; // clear buffer
     Scanner scan = new Scanner(System.in); // Scanner
