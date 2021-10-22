@@ -4,7 +4,7 @@ Description of my process
 To start off, I needed to fix my syntax errors from the quiz, which I did and consisted mainly of semi-colon errors. 
 I started to continue the logic for the printOrder() function that I had left on. My thought process in making this function
 was that I need to first use math to calculate how much space is left, and then use a for-loop to create that many space. I realized
-that I needed to use a for-loop because the lenght of the food in the inventory changed. After making the changes to the previous function, I 
+that I needed to use a for-loop because the length of the food in the inventory changed. After making the changes to the previous function, I 
 made the printTotal() function that used very simillar logic to the printOrder() logic. However, I realized that, in this case, we knew the maximum length
 of the descriptor words, meaning 'total', 'subtotal', and 'tax', which was 8 due to the 'subtotal' being the longest. What I saw that I could do was make the
 smaller sized words equal in string length to subtotal by adding spaces in the string to get to 8 total characters. Now since all the descriptors have the same 
@@ -40,7 +40,7 @@ public class Printer { //prints recipt
   int spaceLeft = 0; // counts how much space is left since amount of space remaining changes
   public void printOrder(){ //Prints only order without subtotals
     System.out.println("Kroger");
-    System.out.println("Qty\t\t Item\t\t Price"); // 40 char out put if /t = 7
+    System.out.println("Qty              Item              Price"); // 40 char output 
     // 3 + 2 + (3 * 4) + 4 + 2 + (3 * 4) + 5 = 40 char
     for (int i = 0; i < 5; i++){
       System.out.print(qty[i] + "\t\t "); // 1 + 2 + (3 * 4) = 15 char
@@ -64,6 +64,10 @@ public class Printer { //prints recipt
   } // close function
 
   public void printTotals(){ // print total values like subtotal, tax, and total
+	for (int i = 0; i <  34; i++){
+		System.out.print(" "); // print spacing for the dashes
+	}
+	System.out.println("______"); // add dashes to split the totals from the subtotals
     for (int i = 0; i < 19; i++){ // 40 - 8 - 7 - 1 - 5 char printed here for spaces
       System.out.print(" "); // print calculated spaces
     }
