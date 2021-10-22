@@ -1,5 +1,5 @@
 /*
-******** Took 5 min and 34 second to type this class
+********Took 5 min and 34 second to type this class
 Description of my process 
 To start off, I needed to fix my syntax errors from the quiz, which I did and consisted mainly of semi-colon errors. 
 I started to continue the logic for the printOrder() function that I had left on. My thought process in making this function
