@@ -36,6 +36,7 @@ public class Printer { //prints recipt
       System.out.print("*");
     }
     System.out.println("\n");
+    System.out.println("\t     Kroger of Mason\n");
 
 
   }
@@ -50,10 +51,17 @@ public class Printer { //prints recipt
 
 
   }
-
+public void printSpacer(){ // prints spacer of 40 char
+	    for(int i = 0; i < 40; i++){ // 40 char output
+	  
+      System.out.print("*");
+    }
+    System.out.println("");
+}
+	
   int spaceLeft = 0; // counts how much space is left since amount of space remaining changes
   public void printOrder(){ //Prints only order without subtotals
-    System.out.println("\t     Kroger of Mason\n");
+
     System.out.println("Qty              Item              Price"); // 40 char output 
     // 3 + 2 + (3 * 4) + 4 + 2 + (3 * 4) + 5 = 40 char
     for (int i = 0; i < 5; i++){
