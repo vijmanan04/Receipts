@@ -1,5 +1,5 @@
 /*
-********Took 5 min and 34 second to type this class
+******** Took 5 min and 34 second to type this class
 Description of my process 
 To start off, I needed to fix my syntax errors from the quiz, which I did and consisted mainly of semi-colon errors. 
 I started to continue the logic for the printOrder() function that I had left on. My thought process in making this function
@@ -30,17 +30,30 @@ public class Printer { //prints recipt
   }
 
   public void printHeader(){ // prints the header for the receipt
+	  System.out.println("\n");
     for(int i = 0; i < 40; i++){ // 40 char output
+	  
       System.out.print("*");
     }
-    System.out.println("");
+    System.out.println("\n");
+
+
+  }
+  
+  public void printEnder(){ // prints the ending part of the receipt
+	  System.out.println("\n\tThank you for shopping! \n");
+    for(int i = 0; i < 40; i++){ // 40 char output
+	  
+      System.out.print("*");
+    }
+    System.out.println("\n");
 
 
   }
 
   int spaceLeft = 0; // counts how much space is left since amount of space remaining changes
   public void printOrder(){ //Prints only order without subtotals
-    System.out.println("Kroger");
+    System.out.println("\t     Kroger of Mason\n");
     System.out.println("Qty              Item              Price"); // 40 char output 
     // 3 + 2 + (3 * 4) + 4 + 2 + (3 * 4) + 5 = 40 char
     for (int i = 0; i < 5; i++){
@@ -52,12 +65,13 @@ public class Printer { //prints recipt
         System.out.print(" ");
       }
       System.out.print("$"); // print dollar sign before each number
-
-      if (prices[i] < 10.0) { //checks for number of characters
-        System.out.print(" " + prices[i]); // prints out 5 chars
+      
+		System.out.print("");
+      if ((prices[i] * qty[i]) < 10.0) { //checks for number of characters
+        System.out.print(" " +String.format("%.2f", (prices[i] * qty[i]))); // prints out 5 chars
       }
-      if (prices[i] >= 10.0) { //checks for number of characters
-        System.out.print(prices[i]); // prints out 5 chars
+      if ((prices[i] * qty[i])>= 10.0) { //checks for number of characters
+        System.out.print(""+ String.format("%.2f", (prices[i] * qty[i]))); // prints out 5 chars
       }
       System.out.println(""); // adds a new line after each entry in purchase summary
     } // close for loop
@@ -76,7 +90,10 @@ public class Printer { //prints recipt
     if (subtotal < 10.0) { //checks for number of characters
       System.out.print(" " + String.format("%.2", subtotal)); // prints out 5 chars
     }
-    if (subtotal >= 10.0) { //checks for number of characters
+	 if ((subtotal >= 10.0) && (subtotal < 100)) { //checks for number of characters
+		  System.out.print(String.format(" " + "%.2f", (subtotal + subtotal * 0.07)) + ""); // format to two decimal places; print total
+		}
+    if (subtotal >= 100.0) { //checks for number of characters
       System.out.print(String.format("%.2f", subtotal)); // prints out 5 chars
     }
 
@@ -103,10 +120,12 @@ public class Printer { //prints recipt
     }
     System.out.print("Total         $"); // 11char printed here
     if (subtotal + taxPayed < 10.0) { //checks for number of characters
-      System.out.print(String.format(" " + "%.2f", (subtotal + subtotal * 0.07)) + "|"); // format to two decimal places; print total
+      System.out.print(String.format("  " + "%.2f", (subtotal + subtotal * 0.07)) + ""); // format to two decimal places; print total
     }
-    
-     if (subtotal + taxPayed >= 10.0) { //checks for number of characters
+    if ((subtotal + taxPayed >= 10.0) && (subtotal+ taxPayed < 100)) { //checks for number of characters
+      System.out.print(String.format(" " + "%.2f", (subtotal + subtotal * 0.07)) + ""); // format to two decimal places; print total
+    }
+     if (subtotal + taxPayed >= 100.0) { //checks for number of characters
       System.out.print(String.format("%.2f", (subtotal + subtotal * 0.07))); // format to two decimal places; print total
     }
 
