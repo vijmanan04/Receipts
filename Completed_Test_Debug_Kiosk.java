@@ -43,6 +43,7 @@ public class Kiosk{
     Printer printer = new Printer(totalPrice, qty, items, prices); // load class; (i.e. send to job to printer)
     // call apropriate functions 
     printer.printHeader();
+    printer.printSpacer();
     printer.printOrder();
     printer.printTotals();
     printer.printEnder();
