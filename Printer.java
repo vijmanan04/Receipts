@@ -5,7 +5,7 @@
 
 
 /*
-******** Took 5 min and 34 seconds to type this class
+******** Took 5 min and 34 seconds to type this class 
 */
 public class Printer { //prints recipt
   double subtotal;
