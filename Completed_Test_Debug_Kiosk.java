@@ -1,5 +1,5 @@
 /*
-********Took 5 min and 1 second to type this class
+******** Took 5 min and 1 second to type this class
 
 Description of my process to make this program:
 The process I used to make the changes from the quiz version to the current version is as follows. 
@@ -15,29 +15,36 @@ import java.util.Scanner;
 public class Kiosk{
   public static void main(String args[]){
     String[] items = {"apple", "banana", "pear", "strawberry", "mango"};
-    System.out.println("Welcome to Kroger! You will purchase then buy your items");
+    System.out.println("\n\n");
+    System.out.print("Welcome to Kroger! You will purchase then buy your items. ");
     double[] prices = {2.33, 2.89, 8.12, 9.15,7.34};
-    System.out.println("Please purchase your good. You will be prompted to buy a type of food, along with its price. You will need to enter the quantity you want to buy.");
+    System.out.println("Please purchase your goods. You will be prompted to buy a type of food, along with its price. You will need to enter the quantity you want to buy.\n");
     String buffer; // clear buffer
     Scanner scan = new Scanner(System.in); // Scanner
     int[] qty = {0,0,0,0,0};
     int purchaseQty;
     double totalPrice = 0;
     for (int i = 0; i < 5; i++) { // ask and update quantities
-      System.out.print("How many " + items[i] + "(s) will you like to buy? (enter an integer): ");
+      System.out.print("How many " + items[i] + "(s) will you like to buy? (enter an integer less than 9): ");
       purchaseQty = scan.nextInt();
       buffer = scan.nextLine();
+      while (purchaseQty > 9){
+		  System.out.print("How many " + items[i] + "(s) will you like to buy? (enter an integer less than 9): ");
+		  purchaseQty = scan.nextInt();
+		  buffer = scan.nextLine();
+	  }
       qty[i] = purchaseQty;
       totalPrice += prices[i] * qty[i];
+      System.out.println("");
     }
     System.out.println("");
 
-    System.out.println("Great! Here is your recipt.");
+    System.out.println("Great! Here is your recipt.\n");
     Printer printer = new Printer(totalPrice, qty, items, prices); // load class; (i.e. send to job to printer)
     // call apropriate functions 
     printer.printHeader();
     printer.printOrder();
     printer.printTotals();
-    printer.printHeader();
+    printer.printEnder();
   } // close main
 } // close main class
